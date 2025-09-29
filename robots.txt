@@ -1,0 +1,4 @@
+Sitemap: https://ilyssia.net/sitemap
+
+User-agent: *
+Disallow: /
