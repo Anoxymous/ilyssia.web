@@ -10,9 +10,9 @@
 
 :root {
   --font-names:  'Le Jour Script', cursive;
+  --font-header: 'Tan Mon Cheri', serif;
   --font-quotes: 'Le Jour Script', cursive;
-  --font-stack:  'Bellefair', serif;
-  --font-subheader:  'Tan Mon Cheri', serif;
+  --font-body:  'Bellefair', serif;
 	
   --colour-background-page: #78003F;
   --colour-background-alt1: #700022;
@@ -25,6 +25,101 @@
 }
 
 
+/* Font Styles */
+.text-title {
+  font-family: var(--font-names);
+  color: var(--colour-soft-font);
+  font-size: 10.0vmin;
+  line-height: 1.1;
+	text-transform: capitalize;
+  text-align: left;
+}
+
+.text-sub-title {
+  font-family: var(--font-header);
+  color: var(--colour-font-main);
+  font-size: 3.0vb;
+  line-height: 1.4;
+	text-transform: uppercase;
+  text-align: center;	
+	margin-bottom: 5%;
+}
+
+.text-sub-title2 {
+  font-family: var(--font-header);
+  color: var(--colour-font-main);
+  font-size: 2.6vb;
+  line-height: 1.4;
+	text-transform: uppercase;
+  text-align: center;	
+	margin-bottom: 8%;
+}
+
+.text-sub-options {
+  font-family: var(--font-header);
+  color: var(--colour-font-main);
+  font-size: 2.2vb;
+  line-height: 1.4;
+  text-align: center;	
+	text-transform: uppercase;
+}
+
+.text-section-heading {
+  font-family: var(--font-header);
+  color: var(--colour-font-main);
+  font-size: 3.2vb;
+  line-height: 1.3;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+.text-section-sub-heading {
+  font-family: var(--font-header);
+  color: var(--colour-font-main);
+  font-size: 2.2vb;
+  line-height: 1.3;
+	text-transform: uppercase;
+	text-align: left;
+	margin-bottom: 5%;
+}
+
+.text-quotes {
+  font-family: var(--font-quotes);
+  color: var(--colour-font-quote);
+  font-size: 4.0vb;
+	line-height: 1;
+	margin-bottom: 5%;
+}
+
+.intro-quote {
+  font-family: var(--font-quotes);
+  color: var(--colour-font-quote);
+  font-size: 3.0vb;
+	line-height: 1;
+	margin-bottom: 5%;
+}
+
+.text-abstract {
+  font-family: var(--font-body);
+  color: var(--colour-font-quote);
+  font-size: 2.6vb;
+	line-height: 1;
+	text-align: center;
+	margin-bottom: 8%;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  color: var(--colour-font-quote);
+  font-size: 2.0vb;
+	line-height: 1;
+	text-align: left;
+	margin-bottom: 10%;
+}
+
+/* General */
+
 * {
   margin: 0;
   padding: 0;
@@ -33,9 +128,11 @@
 
 body, html {
   height: 100%;
-  font-family: var(--font-stack);
+  font-family: var(--font-body);
   overflow: hidden;
 }
+
+/* Layout */
 
 .container {
   display: flex;
@@ -48,7 +145,8 @@ body, html {
   height: 100vh;
   background-color: var(--colour-background-page);
   color: white;
-  padding: 40px;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,19 +163,19 @@ body, html {
   height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  padding: 0;
 }
+
 
 .section {
-  padding: 40px 20px;
-  color: white;
-}
-
-.hero {
-  height: 100vh;
-  background-color: var(--colour-background-page);
+  padding: 5% 1%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.section-content {
+  padding: 0%;
 }
 
 .alt1 {
@@ -88,25 +186,7 @@ body, html {
   background-color: var(--colour-background-alt2);
 }
 
-
-.section h2 {
-  font-size: 2em;
-  color: var(--colour-font-main);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.left-panel {
-  width: 60%;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  background-color: black;
-  margin: 0;
-  padding: 0;
-}
+/* Content Specific */
 
 .collage {
   width: 100%;
@@ -131,8 +211,6 @@ body, html {
   z-index: 2;
 }
 
-
-
 .overlay-elements {
   position: absolute;
   top: 0;
@@ -145,18 +223,19 @@ body, html {
 
 .flower {
   position: absolute;
-  width: 120px;
+  width: 15vmin;
+  height: auto;
   opacity: 0.7;
 }
 
 .bottom-left {
-  bottom: 20px;
-  left: 20px;
+  bottom: 2%;
+  left: 2%;
 }
 
 .top-right {
-  top: 20px;
-  right: 20px;
+  top: 2%;
+  right: 2%;
 }
 
 .soft-line {
@@ -167,87 +246,67 @@ body, html {
 .soft-line-v1 {
   left: 3%;
   top: 3%;
-  bottom: 15%;
-  width: 2px;
+  bottom: 18%;
+  width: 0.3vmin;
 }
 
 .soft-line-v2 {
   right: 3%;
-  top: 22%;
+  top: 25%;
   bottom: 3%;
-  width: 2px;
+  width: 0.3vmin;
 }
 
 .soft-line-h1 {
   top: 3%;
   left: 3%;
-  right: 12%;
-  height: 2px;
+  right: 18%;
+  height: 0.3vmin;
 }
 
 .soft-line-h2 {
   bottom: 3%;
-  left: 10%;
+  left:  8%;
   right: 3%;
-  height: 2px;
+  height: 0.3vmin;
 }
 
 .soft-names {
   position: absolute;
   bottom: 10%;
   right: 15%;
-  font-family: var(--font-names);
-  font-size: 6em;
-	line-height: 1.1;
-	color: var(--colour-soft-font);
 }
 
+
+.hero {
+  height: 100vh;
+  background-color: var(--colour-background-page);
+  justify-content: center;
+}
 
 .hero-content {
-  text-align: center;
-  padding: 60px 20px;
+	  text-align: center;
 }
 
-.hero-date {
-  font-size: 2.0em;
-  margin-bottom: 20px;
-/*	font-family: var(--font-subheader);*/
-}
-
-.hero-location {
-  font-size: 1.6em;
-  margin-bottom: 30px;
-}
-
-.hero-quote {
-  font-family: var(--font-quotes);
-  font-size: 1.6em;
-  color: var(--colour-font-quote);
-  margin-bottom: 40px;
-}
-
-.hero-details {
-  font-size: 1.3em;
-  margin-bottom: 20px;
-}
-
+/*
 .countdown {
   font-size: 1.4em;
   color: var(--colour-font-quote);
   margin-bottom: 30px;
 }
+*/
 
 .rsvp-box {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 2% 8%;
 
 	color: var(--colour-font-main);
 	border: 2px solid;
 	border-color: var(--colour-font-main);
-  border-radius: 12px;
+  border-radius: 20px;
   font-weight: bold;
   text-decoration: none;
-  margin-bottom: 50px;
+  margin-bottom: 5%;
   transition: background-color 0.3s ease;
 }
 
@@ -259,13 +318,13 @@ body, html {
 .chevron-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 5%;
   animation: drop-fade 2s ease-in-out 1;
 }
 
 .chevron-v {
-  width: 40px;
-  height: 40px;
+  width: 5vb;
+  height: 5vb;
   border-right: 3px solid;
   border-bottom: 3px solid;
 	border-color: var(--colour-font-main);
@@ -280,89 +339,18 @@ body, html {
   100% { transform: translateY(0); }
 }
 
-.introduction {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 20px;
-	padding-bottom: 20px;
-}
-
 .intro-content {
-  max-width: 700px;
-  text-align: center;
+  max-width: 90%;
 }
 
 .intro-image {
   width: 100%;
-  max-height: 300px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 5%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-
-.intro-text {
-  font-size: 1.1em;
-  line-height: 1.6;
-	margin-bottom: 30px;
-}
-
-.our-story {
-  padding: 60px 30px;
-}
-
-.story-block {
-  margin-bottom: 50px;
-}
-
-.story-block h3 {
-  font-size: 1.8em;
-  color: #ffdede;
-  margin-bottom: 10px;
-}
-
-.story-block .subtitle {
-  font-family: var(--font-quotes);
-  font-size: 1.4em;
-  color: var(--colour-font-quote);
-  margin-bottom: 20px;
-}
-
-.story-block p {
-  font-size: 1.1em;
-  line-height: 1.7;
-}
-
-.wedding-schedule {
-  padding: 60px 30px;
-}
-
-
-.schedule-block {
-  margin-bottom: 40px;
-}
-
-.schedule-block h3 {
-  font-size: 1.4em;
-  color: #f0c0c0;
-  margin-bottom: 10px;
-}
-
-.schedule-block p {
-  font-size: 1.05em;
-  line-height: 1.6;
-  color: #f5f5f5;
-}
-
-.sunset-tag {
-  font-family: 'Great Vibes', cursive;
-  font-size: 1em;
-  color: #ffdede;
-  margin-left: 10px;
-}
-
-
 
 
 /*  Mobile Device Layout  */
@@ -379,17 +367,19 @@ body, html {
   .left-panel {
     position: relative;
     width: 100%;
-    height: 50vh;
-    min-height: 50vh;
+    height: 45vh;
+    min-height: 45vh;
   }
 
   .right-panel {
     width: 100%;
     margin-left: 0;
-		height: 50vh;
+		height: 55vh;
+    min-height: 55vh;
     overflow: visible;
   }
 
+/*
   .collage-image {
     height: 100%;
     object-fit: cover;
@@ -398,19 +388,11 @@ body, html {
   .overlay-elements {
     z-index: 3;
   }
-
+*/
   .hero {
     height: auto;
-    min-height: 50vh;
+    min-height: 55vh;
 	}
 	
-  .section {
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .chevron-wrapper {
-    margin-top: 10px;
-  }
 }
 
