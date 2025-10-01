@@ -9,36 +9,72 @@
 }
 
 :root {
-  --font-names:  'Le Jour Script', cursive;
-  --font-header: 'Tan Mon Cheri', serif;
-  --font-quotes: 'Le Jour Script', cursive;
-  --font-body:  'Bellefair', serif;
-	
   --colour-background-page: #78003F;
   --colour-background-alt1: #700022;
   --colour-background-alt2: #800020;
+  --font-scale: 1;
+
+	/* Default Font */
+  --default-font-family: 'Bellefair', serif;
+  --default-font-colour: #f5f5f5;
+  --default-font-size: 1;
+
+	/* Couples Name Font */
+  --names-font-family: 'Le Jour Script', cursive;
+  --names-font-colour: #f5f5f5;
+  --names-font-size: 10.0;
+
+	/* Quote Font */
+  --quote-font-family: 'Qwitcher Grypen', serif;
+  --quote-font-colour: #f0c0c0;
+  --quote-font-size: 4.7;
+
+	/* Section Header Font */
+  --section-h1-font-family: 'Tan Mon Cheri', serif;
+  --section-h1-font-colour: #f5f5f5;
+  --section-h1-font-size: 5.0;
+
+	/* Section Subheader Font */
+  --section-h2-font-family: 'Tan Mon Cheri', serif;
+  --section-h2-font-colour: #f5f5f5;
+  --section-h2-font-size: 3.4;
+
+	/* Section Body Font */
+  --section-body-font-family: 'Bellefair', serif;
+  --section-body-font-colour: #f5f5f5;
+  --section-body-font-size: 3.4;
+
+
+  --font-names:  'Le Jour Script', cursive;
+  --font-header: 'Tan Mon Cheri', serif;
+  --font-quotes: 'Qwitcher Grypen', cursive;
+  --font-body:  'Bellefair', serif;	
+
+	/* Other Colours */
 	--colour-link-hover: #ffdede;
 	--colour-soft-line: rgba(255, 255, 255, 0.7);
+	/*
 	--colour-soft-font: #f5f5f5;
   --colour-font-main: #f5f5f5;
 	--colour-font-quote: #f0c0c0;
+	*/
 }
 
 
 /* Font Styles */
 .text-title {
-  font-family: var(--font-names);
-  color: var(--colour-soft-font);
-  font-size: 10.0vmin;
+	font-family: var(--names-font-family);
+  color: var(--names-font-colour);
+  font-size: calc(1.0vmin * var(--names-font-size) * var(--font-scale));
   line-height: 1.1;
 	text-transform: capitalize;
   text-align: left;
 }
 
 .text-sub-title {
-  font-family: var(--font-header);
-  color: var(--colour-font-main);
-  font-size: 3.0vb;
+	font-family: var(--section-h1-font-family);
+  color: var(--section-h1-font-colour);
+  font-size: calc(3.0vb * var(--font-scale));
   line-height: 1.4;
 	text-transform: uppercase;
   text-align: center;	
@@ -46,9 +82,9 @@
 }
 
 .text-sub-title2 {
-  font-family: var(--font-header);
-  color: var(--colour-font-main);
-  font-size: 2.6vb;
+	font-family: var(--section-h1-font-family);
+  color: var(--section-h1-font-colour);
+  font-size: calc(2.6vb * var(--font-scale));
   line-height: 1.4;
 	text-transform: uppercase;
   text-align: center;	
@@ -56,28 +92,29 @@
 }
 
 .text-sub-options {
-  font-family: var(--font-header);
-  color: var(--colour-font-main);
-  font-size: 2.2vb;
+	font-family: var(--section-h1-font-family);
+  color: var(--section-h1-font-colour);
+  font-size: calc(2.2vb * var(--font-scale));
   line-height: 1.4;
   text-align: center;	
 	text-transform: uppercase;
 }
 
 .text-section-heading {
-  font-family: var(--font-header);
-  color: var(--colour-font-main);
-  font-size: 3.2vb;
+	font-family: var(--section-h1-font-family);
+  color: var(--section-h1-font-colour);
+  font-size: calc(1.0vb * var(--section-h1-font-size) * var(--font-scale));
   line-height: 1.3;
 	text-transform: uppercase;
 	text-align: center;
-	margin-bottom: 5%;
+	margin-top: 15%;
+	margin-bottom: 50%;
 }
 
 .text-section-sub-heading {
-  font-family: var(--font-header);
-  color: var(--colour-font-main);
-  font-size: 2.2vb;
+	font-family: var(--section-h2-font-family);
+  color: var(--section-h2-font-colour);
+  font-size: calc(1.0vb * var(--section-h2-font-size) * var(--font-scale));
   line-height: 1.3;
 	text-transform: uppercase;
 	text-align: left;
@@ -85,37 +122,37 @@
 }
 
 .text-quotes {
-  font-family: var(--font-quotes);
-  color: var(--colour-font-quote);
-  font-size: 4.0vb;
+	font-family: var(--quote-font-family);
+  color: var(--quote-font-colour);
+  font-size: calc(1.0vb * var(--quote-font-size) * var(--font-scale));
 	line-height: 1;
 	margin-bottom: 5%;
 }
 
 .intro-quote {
-  font-family: var(--font-quotes);
-  color: var(--colour-font-quote);
-  font-size: 3.0vb;
+	font-family: var(--quote-font-family);
+  color: var(--quote-font-colour);
+  font-size: calc(0.8vb * var(--quote-font-size) * var(--font-scale));
 	line-height: 1;
 	margin-bottom: 5%;
 }
 
 .text-abstract {
-  font-family: var(--font-body);
-  color: var(--colour-font-quote);
-  font-size: 2.6vb;
+  font-family: var(--section-body-font-family);
+  color: var(--section-body-font-colour);
+  font-size: calc(1.0vb * var(--section-body-font-size) * var(--font-scale));
 	line-height: 1;
 	text-align: center;
 	margin-bottom: 8%;
 }
 
 .text-body {
-  font-family: var(--font-body);
-  color: var(--colour-font-quote);
-  font-size: 2.0vb;
+  font-family: var(--section-body-font-family);
+  color: var(--section-body-font-colour);
+  font-size: calc(1.0vb * var(--section-body-font-size) * var(--font-scale));
 	line-height: 1;
 	text-align: left;
-	margin-bottom: 10%;
+	margin-bottom: 20%;
 }
 
 /* General */
@@ -128,8 +165,13 @@
 
 body, html {
   height: 100%;
-  font-family: var(--font-body);
   overflow: hidden;
+	
+  font-family: var(--default-font-family);
+  color: var(--default-font-colour);
+  font-size: calc(1.0vb * var(--default-font-size) * var(--font-scale));
+	line-height: 1;
+	text-align: left;
 }
 
 /* Layout */
@@ -166,9 +208,8 @@ body, html {
   padding: 0;
 }
 
-
 .section {
-  padding: 5% 1%;
+  padding: 5% 2%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -229,13 +270,13 @@ body, html {
 }
 
 .bottom-left {
-  bottom: 2%;
-  left: 2%;
+  bottom: 3%;
+  left: 3%;
 }
 
 .top-right {
-  top: 2%;
-  right: 2%;
+  top: 3.4%;
+  right: 3%;
 }
 
 .soft-line {
@@ -246,13 +287,13 @@ body, html {
 .soft-line-v1 {
   left: 3%;
   top: 3%;
-  bottom: 18%;
+  bottom: 3%;
   width: 0.3vmin;
 }
 
 .soft-line-v2 {
   right: 3%;
-  top: 25%;
+  top: 3%;
   bottom: 3%;
   width: 0.3vmin;
 }
@@ -260,13 +301,13 @@ body, html {
 .soft-line-h1 {
   top: 3%;
   left: 3%;
-  right: 18%;
+  right: 3%;
   height: 0.3vmin;
 }
 
 .soft-line-h2 {
   bottom: 3%;
-  left:  8%;
+  left:  3%;
   right: 3%;
   height: 0.3vmin;
 }
@@ -298,11 +339,10 @@ body, html {
 
 .rsvp-box {
   display: inline-block;
-  padding: 2% 8%;
+  padding: 3% 8% 2% 8%;
 
-	color: var(--colour-font-main);
 	border: 2px solid;
-	border-color: var(--colour-font-main);
+	border-color: var(--section-h1-font-colour);
   border-radius: 20px;
   font-weight: bold;
   text-decoration: none;
