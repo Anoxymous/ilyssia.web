@@ -385,14 +385,6 @@ body, html {
 	  text-align: center;
 }
 
-/*
-.countdown {
-  font-size: 1.4em;
-  color: var(--colour-font-quote);
-  margin-bottom: 30px;
-}
-*/
-
 .rsvp-box {
   display: inline-block;
   padding: 3% 8% 2% 8%;

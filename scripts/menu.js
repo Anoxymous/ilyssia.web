@@ -6,7 +6,21 @@ function toggleMenu() {
   icon.innerHTML = ( menu.style.display === "flex") ? "×" : "≡";
 }
 
+function updateActiveLink() {
+	
+  const links = document.querySelectorAll(".menu-links a");
+  const sections = Array.from(links).map(link => document.querySelector(link.getAttribute("href")));
+	
+	let index = sections.findIndex(section => {
+		const rect = section.getBoundingClientRect();
+		return rect.top <= 100 && rect.bottom >= 100;
+	});
 
+	if (index !== -1) {
+		links.forEach(link => link.classList.remove("active"));
+		links[index].classList.add("active");
+	}
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuContainer = document.getElementById("main-menu");
@@ -52,26 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+	
+	const right_scroll_panel = document.getElementById("right-panel");
+	const cont_scroll_panel = document.getElementById("container-panel");
 
-/*
-document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".menu-links a");
-  const sections = Array.from(links).map(link => document.querySelector(link.getAttribute("href")));
-
-  function updateActiveLink() {
-    let index = sections.findIndex(section => {
-      const rect = section.getBoundingClientRect();
-      return rect.top <= 100 && rect.bottom >= 100;
-    });
-
-    if (index !== -1) {
-      links.forEach(link => link.classList.remove("active"));
-      links[index].classList.add("active");
-    }
-  }
-
-  window.addEventListener("scroll", updateActiveLink);
+	right_scroll_panel.addEventListener("scroll", updateActiveLink);
+	cont_scroll_panel.addEventListener("scroll", updateActiveLink);
   updateActiveLink(); // Initial check
 });
-*/
