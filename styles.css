@@ -44,15 +44,21 @@
   --section-body-font-colour: #f5f5f5;
   --section-body-font-size: 3.4;
 
-
-  --font-names:  'Le Jour Script', cursive;
-  --font-header: 'Tan Mon Cheri', serif;
-  --font-quotes: 'Qwitcher Grypen', cursive;
-  --font-body:  'Bellefair', serif;	
+	/* Menu */
+  --menu-font-family: 'Bellefair', serif;
+  --menu-font-size: 3.5;
+  --menu-font-colour: #f5f5f5;
+  --menu-font-colour-hover: #ffdede;
+  --menu-colour-background: rgba(100, 0, 50, 0.8);
+  --menu-icon-font-family: 'Arial', sans-serif;
+  --menu-icon-size: 5;
+  --menu-icon-background: rgba(200, 50, 50, 0.75);
+	--menu-current-bg-colour: #ffdede;
+  --menu-current-font-colour: #800020;
 
 	/* Other Colours */
 	--colour-link-hover: #ffdede;
-	--colour-soft-line: rgba(255, 255, 255, 0.7);
+	--colour-soft-line: rgba(128, 0, 32, 0.6);
 }
 
 
@@ -222,6 +228,60 @@ body, html {
 .alt2 {
   background-color: var(--colour-background-alt2);
 }
+
+/* Menu */
+
+.mobile-menu {
+  position: fixed;
+  top: 2vmax;
+  left: 2vmax;
+  z-index: 100;
+}
+
+.menu-icon {
+  font-family: var(--menu-icon-font-family);
+  font-size: calc(0.8vh * var(--menu-icon-size));
+	line-height: 1;
+  background-color: var(--menu-icon-background);
+  border-radius: 10px;
+	display: flex;
+  width: calc(1.0vh * var(--menu-icon-size));
+  height: calc(1.0vh * var(--menu-icon-size));
+  justify-content: center;
+  align-items: center;
+	text-align: center;
+  cursor: pointer;
+}
+
+.menu-links {
+  display: none;
+  flex-direction: column;
+  background-color: var(--menu-colour-background);
+  padding: 1.0vmin;
+  border-radius: 10px;
+  margin-top: 2%;
+}
+
+.menu-links a {
+  font-family: var(--menu-font-family);
+  font-size: calc(1.0vb * var(--default-font-size) * var(--font-scale));
+  color: var(--menu-font-colour);
+	text-align: left;
+  text-decoration: none;
+  margin: 2% 0;
+  font-size: calc(1.0vb * var(--menu-font-size) * var(--font-scale));
+	white-space: nowrap;
+}
+
+.menu-links a:hover {
+  color: var(--menu-font-colour-hover);
+}
+
+.menu-links a.active {
+  background-color: var(--menu-current-bg-colour);
+  color: var(--menu-current-font-colour);
+}
+
 
 /* Content Specific */
 
