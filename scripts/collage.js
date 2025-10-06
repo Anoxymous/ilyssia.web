@@ -17,13 +17,14 @@ function showPreviousImage() {
   showImage(current - 1);
 }
 
-// Swipe detection
-document.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
+function swipeStart(eventX)
+{
+  startX = eventX;	
+}
 
-document.addEventListener("touchend", (e) => {
-  endX = e.changedTouches[0].clientX;
+function swipeEnd(eventX)
+{
+	endX = eventX;
   const deltaX = endX - startX;
 
   if (Math.abs(deltaX) > 50) { // threshold to avoid accidental swipes
@@ -33,6 +34,18 @@ document.addEventListener("touchend", (e) => {
       showPreviousImage(); // swipe right
     }
   }
-});
+}
+
+
+const el = document.getElementById("collage");
+
+// Swipe detection
+el.addEventListener("touchstart", (e) => { swipeStart(e.touches[0].clientX); });
+el.addEventListener("mousedown", (e) => { swipeStart(e.clientX); });
+
+el.addEventListener("touchend", (e) => { swipeEnd(e.changedTouches[0].clientX); });
+el.addEventListener("mouseup", (e) => { swipeEnd(e.clientX); });
+el.addEventListener("mouseout", (e) => { swipeEnd(e.clientX); });
+ 
 
 setInterval(showNextImage, 15000); // 15 seconds

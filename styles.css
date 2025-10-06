@@ -301,6 +301,7 @@ body, html {
   object-fit: cover; /* Maintains aspect ratio, crops as needed */
   opacity: 0;
   transition: opacity 1s ease-in-out;
+	pointer-events: none;
 }
 
 .collage-image.active {
