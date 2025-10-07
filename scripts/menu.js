@@ -39,11 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Find all sections with class 'section' and an id
   const sections = document.querySelectorAll("section.section[id]");
   sections.forEach(section => {
+		
     const id = section.id;
-    const label = id
+    var label = id
       .replace(/-/g, " ")
       .replace(/\b\w/g, c => c.toUpperCase()); // Capitalize each word
 
+		if(section.hasAttribute("data"))
+		{
+			label = section.getAttribute("data")
+		}
     const link = document.createElement("a");
     link.href = "#" + id;
     link.textContent = label;
