@@ -59,6 +59,9 @@
 	/* Other Colours */
 	--colour-link-hover: #ffdede;
 	--colour-soft-line: rgba(128, 0, 32, 0.6);
+
+	--colour-link: #3EB489;
+	--colour-link-visit: #108040;
 }
 
 
@@ -109,7 +112,6 @@
 	text-transform: uppercase;
 	text-align: center;
 	margin-top: 15%;
-	margin-bottom: 20%;
 }
 
 .text-section-sub-heading {
@@ -119,6 +121,7 @@
   line-height: 1.3;
 	text-transform: uppercase;
 	text-align: left;
+	margin-top: 15%;
 	margin-bottom: 5%;
 }
 
@@ -154,8 +157,29 @@
   font-size: calc(1.0vb * var(--section-body-font-size) * var(--font-scale));
 	line-height: 1;
 	text-align: left;
-	margin-bottom: 20%;
+/*	margin-bottom: 15%;	*/
 }
+
+.text-body-list {
+  font-family: var(--section-body-font-family);
+  color: var(--section-body-font-colour);
+  font-size: calc(1.0vb * var(--section-body-font-size) * var(--font-scale));
+	line-height: 1;
+  padding-left: 5%;
+  list-style-type: disc;
+	/*	margin-bottom: 15%;	*/
+
+}
+
+.text-body-list li {
+  margin-bottom: 1%;
+}
+
+/*
+.text-body-list li::before {
+  content: "🌙 ";
+}
+*/
 
 /* General */
 
@@ -175,6 +199,15 @@ body, html {
 	line-height: 1;
 	text-align: left;
 }
+
+a {
+  color: var(--colour-link);
+}
+
+a:hover {
+  color: var(--colour-link-visit);
+}
+
 
 /* Layout */
 
@@ -219,6 +252,7 @@ body, html {
 
 .section-content {
   padding: 0%;
+	margin-bottom: 15%;
 }
 
 .alt1 {
@@ -383,6 +417,7 @@ body, html {
 }
 
 .hero-content {
+	  padding: 0%;
 	  text-align: center;
 }
 
@@ -419,6 +454,11 @@ body, html {
 	border-color: var(--colour-font-main);
   transform: rotate(45deg);
   position: relative;
+}
+
+.map-frame {
+	margin-top: 10%;
+	margin-bottom: 5%;
 }
 
 @keyframes drop-fade {
