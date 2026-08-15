@@ -47,9 +47,9 @@ const timelinedata = `
 | 12:45 | 13:00 | Bride    | BPM             | Relax                      | Champagne & snacks                                                                                  |
 | 13:00 | 13:45 | Bride    | BPM,P&V         | Bride Getting Ready Photos | Photographer arrives! (shortened by 30 mins)                                                        |
 | 13:45 | 13:55 | Bride    | BPM,P&V         | Travel to Marina           |                                                                                                     |
-| 10:00 | 13:45 | Grooms   | BPM,P&V         | Get Dressed                |                                                                                                     |
-| 13:45 | 13:55 | Grooms   | BPM,P&V         | Travel to Marina           |                                                                                                     |
-| 20:15 | 20:20 | Grooms   |                 | Ily Goes to Bed            |                                                                                                     |
+| 10:00 | 13:45 | Groom    | BPM,P&V         | Get Dressed                |                                                                                                     |
+| 13:45 | 13:55 | Groom    | BPM,P&V         | Travel to Marina           |                                                                                                     |
+| 20:15 | 20:20 | Groom    |                 | Ily Goes to Bed            |                                                                                                     |
 | 13:55 | 14:30 | Bride    | BPM,BPT,P&V     | Photosheet Marina          | Was 14:30                                                                                           |
 | 14:30 | 16:00 | Bride    | BPM,BPT,P&V,N&C | Yacht Photo Shoot          | (1 1/2 hrs on boat)                                                                                 |
 | 14:30 | 16:00 | Bride    | BPM,BPT,P&V,N&C | Yacht Photo Shoot          | (1 1/2 hrs on boat)                                                                                 |
@@ -59,7 +59,6 @@ const timelinedata = `
 | 16:30 | 17:00 | Bride    | ALL             | Group Photo's              |                                                                                                     |
 | 17:15 | 17:20 | Bride    | BPE,BPM,FOB     | Isle Walk                  | Down the isle - Flower girls & Pages, brides maides, Bride and FOB                                  |
 | 18:30 | 17:50 | Bride    |                 | Dinner                     |                                                                                                     |
-| 19:20 | 19:50 | MC       | MC              | Speeches                   | Best Man, Maid of Honour, FoB, PoG, Groom                                                           |
 | 19:50 | 20:00 | Bride    |                 | Get Changed                |                                                                                                     |
 | 16:00 | 16:15 | Music    | BND             | Soloist - Bridal Entrance  | Play someting for our arival                                                                        |
 | 16:15 | 17:00 | Music    | BND             | Soloist                    |                                                                                                     |
