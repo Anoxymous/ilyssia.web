@@ -38,6 +38,9 @@ const timelinedata = `
 | 20:50 | 21:00 | Sequence |                 | Bouque Toss                |                                                                                                     |
 | 21:00 | 21:05 | Sequence |                 | Photographers leaves       |                                                                                                     |
 | 21:05 | 21:15 | Sequence |                 | Serve Cake                 |                                                                                                     |
+| 21:55 | 22:00 | Sequence |                 | Garter Throw               |                                                                                                     |
+| 21:30 | 21:45 | Sequence |                 | Father Daughter Dance      |                                                                     |
+| 22:30 | 22:35 | Sequence |                 | Bride & Groom Send Off     |                                                                     |
 | 22:45 | 23:00 | Sequence |                 | Hard Stop                  |                                                                                                     |
 | 09:00 | 12:30 | Bride    | BPM,HMU         | Hair and Make-up start     | Michelle to Confirm start time with Pete. Must finish by 12:30                                      |
 | 12:30 | 12:45 | Bride    | BPM             | Room tidy                  | Room tidied, Everyone gets dressed in robes, dress hung, details laid out                           |
@@ -58,14 +61,15 @@ const timelinedata = `
 | 18:30 | 17:50 | Bride    |                 | Dinner                     |                                                                                                     |
 | 19:20 | 19:50 | MC       | MC              | Speeches                   | Best Man, Maid of Honour, FoB, PoG, Groom                                                           |
 | 19:50 | 20:00 | Bride    |                 | Get Changed                |                                                                                                     |
-| 20:00 | 20:15 | Bride    |                 | First Dance                |                                                                                                     |
 | 16:00 | 16:15 | Music    | BND             | Soloist - Bridal Entrance  | Play someting for our arival                                                                        |
 | 16:15 | 17:00 | Music    | BND             | Soloist                    |                                                                                                     |
 | 17:15 | 17:20 | Music    | BPE,BPM,FOB     | Soloist - Isle Walk        | Play the walk down the isle                                                                         |
 | 17:45 | 17:50 | Music    |                 | Soloist - Ceremony Exit    |                                                                                                     |
 | 18:10 | 18:55 | Music    | BND             | Band Set 1 - Dinner        |                                                                                                     |
-| 20:10 | 20:50 | Music    | BND             | Band Set 2 - Pump up jams  |                                                                                                     |
-| 21:10 | 21:55 | Music    | BND             | Band Set 3                 |                                                                     |
+| 20:00 | 20:10 | Music |                    | First Dance Song           |  I've had the time of my life                                                                       |
+| 20:10 | 20:50 | Music    | BND             | Band Set 2                 |                                                                                                     |
+| 21:10 | 21:55 | Music    | BND             | Band Set 3                 |                                                                                                     |
+| 22:15 | 22:55 | Music    | BND             | Band Set 4                 |                                                                                                     |
 | 13:00 | 13:10 | Photos   | BPM,P&V         | Detail photos              | Rings, invitations, shoes, jewellery, perfume, dress, bouquet                                       |
 | 13:10 | 13:20 | Photos   | BPM,P&V         | Bridesmaids assit          | With bridesmaids candid shots, Champagne/toast                                                      |
 | 13:20 | 13:35 | Photos   | BPM,P&V         | Getting into dress         | With your Maid of Honour and Mama. Shoes, jewellery (from envelope) and veil.                       |
@@ -86,11 +90,6 @@ const timelinedata = `
 | 18:20 | 18:25 | Photos   | BPM,P&V         | Bride & Groom entrance     |                                                                     |
 | 18:30 | 19:50 | Photos   | BPM,P&V         | Dinner served              | Speeches between courses (5 speakers × 5 minutes maximum)           |
 | 20:30 | 21:00 | Photos   |                 | Photobombs                 |                                                                     |
-| 20:50 | 21:00 | B&G      |                 | Cake Cutting               |                                                                     |
-| 21:55 | 22:00 | B&G      |                 | Garter Throw               |                                                                     |
-| 22:10 | 22:15 | B&G      |                 | Father Daughter Dance      |                                                                     |
-| 22:15 | 22:55 | Music    | BND             | Band Set 4 - wind down     |                                                                     |
-| 22:30 | 22:35 | B&G      |                 | Bride & Groom Send Off     |                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|
 `
 
