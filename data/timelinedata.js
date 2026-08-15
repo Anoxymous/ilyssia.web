@@ -60,12 +60,13 @@ const timelinedata = `
 | 17:15 | 17:20 | Bride    | BPE,BPM,FOB     | Isle Walk                  | Down the isle - Flower girls & Pages, brides maides, Bride and FOB                                  |
 | 18:30 | 17:50 | Bride    |                 | Dinner                     |                                                                                                     |
 | 19:50 | 20:00 | Bride    |                 | Get Changed                |                                                                                                     |
+| 10:00 | 12:00 | Music    | BND             | Band & Music Setup         |                                                                                                     |
 | 16:00 | 16:15 | Music    | BND             | Soloist - Bridal Entrance  | Play someting for our arival                                                                        |
 | 16:15 | 17:00 | Music    | BND             | Soloist                    |                                                                                                     |
 | 17:15 | 17:20 | Music    | BPE,BPM,FOB     | Soloist - Isle Walk        | Play the walk down the isle                                                                         |
 | 17:45 | 17:50 | Music    |                 | Soloist - Ceremony Exit    |                                                                                                     |
 | 18:10 | 18:55 | Music    | BND             | Band Set 1 - Dinner        |                                                                                                     |
-| 20:00 | 20:10 | Music |                    | First Dance Song           |  I've had the time of my life                                                                       |
+| 20:00 | 20:10 | Music    |                 | First Dance Song           | I've had the time of my life                                                                        |
 | 20:10 | 20:50 | Music    | BND             | Band Set 2                 |                                                                                                     |
 | 21:10 | 21:55 | Music    | BND             | Band Set 3                 |                                                                                                     |
 | 22:15 | 22:55 | Music    | BND             | Band Set 4                 |                                                                                                     |
