@@ -5,246 +5,88 @@
 <title>Wedding Timeline</title>
 <style>
   body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: Arial, sans-serif;
     background: #f5f0e6;
     margin: 0;
     padding: 20px;
-    color: #1f2933;
   }
-  h1 {
-    margin-bottom: 10px;
-  }
-  #controls {
-    margin-bottom: 15px;
-  }
+
+  h1 { margin-bottom: 10px; }
+
   #timeline-container {
     display: flex;
     gap: 20px;
   }
+
   #timeline {
     border-collapse: collapse;
-    font-size: 12px;
     background: #fdfaf5;
     border: 1px solid #d0c4aa;
+    font-size: 13px;
   }
-  #timeline th,
-  #timeline td {
+
+  #timeline th, #timeline td {
     border: 1px solid #d0c4aa;
-    padding: 2px 4px;
+    padding: 4px 6px;
     text-align: center;
-    min-width: 60px;
   }
-  #timeline th.time-header {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-size: 10px;
-    background: #e6ddc7;
-  }
+
   #timeline th.category-header {
     background: #e0d4bd;
-    font-weight: 600;
+    font-weight: bold;
   }
-  .time-label {
-    font-weight: 600;
+
+  #timeline td.time-cell {
+    background: #e6ddc7;
+    font-weight: bold;
+    width: 60px;
   }
-  .empty-slot {
-    background: #fdfaf5;
-  }
+
   .event-slot {
     cursor: pointer;
-    font-size: 11px;
+    border-radius: 3px;
     padding: 4px;
-    border-radius: 2px;
   }
+
   .event-slot:hover {
     outline: 2px solid #1f2933;
   }
+
   #details {
     flex: 0 0 260px;
     border: 1px solid #d0c4aa;
     background: #fdfaf5;
     padding: 10px;
+
+    /* NEW — makes the panel scroll with the page */
+    position: sticky;
+    top: 20px;
+    height: fit-content;
   }
-  #details h2 {
-    margin-top: 0;
-    font-size: 14px;
-  }
-  #details .field-label {
-    font-weight: 600;
-  }
+
+  #details h2 { margin-top: 0; }
+  .field-label { font-weight: bold; }
 </style>
 </head>
 <body>
-<h1>Wedding Timeline</h1>
-<div id="controls">
-  <label>
-    Load timeline.txt:
-    <input type="file" id="fileInput" accept=".txt">
-  </label>
-</div>
 
+<h1>Wedding Timeline</h1>
+<div id="filters"></div>
 <div id="timeline-container">
   <table id="timeline"></table>
+
   <div id="details">
     <h2>Selected Item</h2>
     <p><span class="field-label">Time:</span> <span id="detail-time">–</span></p>
     <p><span class="field-label">Category:</span> <span id="detail-category">–</span></p>
     <p><span class="field-label">Title:</span> <span id="detail-title">–</span></p>
-    <p><span class="field-label">Notes:</span></p>
-    <p id="detail-notes">–</p>
+    <p><span class="field-label">Who:</span></p><p  id="detail-who">–</p>
+    <p><span class="field-label">Notes:</span></p><p id="detail-notes">–</p>
   </div>
 </div>
 
-<script>
-(function() {
-  const fileInput = document.getElementById('fileInput');
-  const table = document.getElementById('timeline');
+<script src="timelinedata.js"></script>
+<script src="timeline.js"></script>
 
-  const detailTime = document.getElementById('detail-time');
-  const detailCategory = document.getElementById('detail-category');
-  const detailTitle = document.getElementById('detail-title');
-  const detailNotes = document.getElementById('detail-notes');
-
-  const categoryColors = {};
-  const palette = [
-    '#cfe0ff', '#ffd6c2', '#ffe8a3', '#d9f2d9',
-    '#f3d9ff', '#ffccd7', '#c8f0ff', '#e8e0ff'
-  ];
-
-  function parseTime(str) {
-    const [h, m] = str.trim().split(':').map(Number);
-    return h * 60 + m;
-  }
-
-  function formatTime(minutes) {
-    const h = Math.floor(minutes / 60);
-    const m = minutes % 60;
-    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-  }
-
-  function parseTimeline(text) {
-    const lines = text.split('\n').map(l => l.trim()).filter(l => l.length);
-    const events = [];
-    for (const line of lines) {
-      if (line.startsWith('|---')) continue;
-      if (line.startsWith('| Start')) continue;
-      if (!line.startsWith('|')) continue;
-
-      const parts = line.split('|').map(p => p.trim());
-      if (parts.length < 7) continue;
-
-      const start = parts[1];
-      const end = parts[2];
-      const category = parts[3] || '';
-      const title = parts[5] || '';
-      const notes = parts[6] || '';
-
-      if (!start || !end || !title) continue;
-
-      events.push({
-        start: parseTime(start),
-        end: parseTime(end),
-        category,
-        title,
-        notes
-      });
-    }
-    return events;
-  }
-
-  function buildTimeline(events) {
-    table.innerHTML = '';
-
-    if (!events.length) return;
-
-    const minTime = Math.min(...events.map(e => e.start));
-    const maxTime = Math.max(...events.map(e => e.end));
-
-    const startTime = Math.floor(minTime / 5) * 5;
-    const endTime = Math.ceil(maxTime / 5) * 5;
-
-    const times = [];
-    for (let t = startTime; t <= endTime; t += 5) {
-      times.push(t);
-    }
-
-    const categories = Array.from(
-      new Set(events.map(e => e.category || 'Uncategorized'))
-    );
-
-    categories.forEach((cat, idx) => {
-      categoryColors[cat] = palette[idx % palette.length];
-    });
-
-    // Header row: time slots
-    const headerRow = document.createElement('tr');
-    const cornerTh = document.createElement('th');
-    cornerTh.textContent = 'Time';
-    cornerTh.className = 'category-header';
-    headerRow.appendChild(cornerTh);
-
-    categories.forEach(cat => {
-      const th = document.createElement('th');
-      th.textContent = cat || 'Uncategorized';
-      th.className = 'category-header';
-      headerRow.appendChild(th);
-    });
-
-    table.appendChild(headerRow);
-
-    // Time rows
-    times.forEach((t, idx) => {
-      const tr = document.createElement('tr');
-
-      const timeTh = document.createElement('th');
-      timeTh.className = 'time-header';
-      const label = (t % 15 === 0) ? formatTime(t) : '';
-      timeTh.innerHTML = label ? `<span class="time-label">${label}</span>` : '';
-      tr.appendChild(timeTh);
-
-      categories.forEach(cat => {
-        const td = document.createElement('td');
-        td.className = 'empty-slot';
-
-        const matching = events.filter(e =>
-          (e.category || 'Uncategorized') === cat &&
-          e.start <= t && e.end > t
-        );
-
-        if (matching.length) {
-          const ev = matching[0];
-          td.className = 'event-slot';
-          td.style.backgroundColor = categoryColors[cat];
-          td.textContent = ev.title;
-
-          td.addEventListener('click', () => {
-            detailTime.textContent = `${formatTime(ev.start)} – ${formatTime(ev.end)}`;
-            detailCategory.textContent = cat || 'Uncategorized';
-            detailTitle.textContent = ev.title;
-            detailNotes.textContent = ev.notes || 'No notes.';
-          });
-        }
-
-        tr.appendChild(td);
-      });
-
-      table.appendChild(tr);
-    });
-  }
-
-  fileInput.addEventListener('change', function() {
-    const file = this.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const text = e.target.result;
-      const events = parseTimeline(text);
-      buildTimeline(events);
-    };
-    reader.readAsText(file);
-  });
-})();
-</script>
 </body>
 </html>
