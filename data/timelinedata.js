@@ -6,9 +6,9 @@ const timelinedata = `
 | 09:00 | 14:00 | Schedule | SCH             | Getting Ready              |                                                                                                     |
 | 14:00 | 15:30 | Schedule | SCH             | Pre-Wedding Photos         |                                                                                                     |
 | 15:30 | 16:00 | Schedule | SCH             | Guests Arrive              |                                                                                                     |
-| 16:00 | 16:15 | Schedule | SCH             | Blessing Ceromony          |                                                                                                     |
-| 16:15 | 17:15 | Schedule | SCH             | Canapies & Guest Photos    |                                                                                                     |
-| 17:15 | 18:00 | Schedule | SCH             | Wedding Ceromony           |                                                                                                     |
+| 16:00 | 16:15 | Schedule | SCH             | Blessing Ceremony          |                                                                                                     |
+| 16:15 | 17:15 | Schedule | SCH             | Canapés & Guest Photos     |                                                                                                     |
+| 17:15 | 18:00 | Schedule | SCH             | Wedding Ceremony           |                                                                                                     |
 | 18:00 | 20:00 | Schedule | SCH             | Reception - Dinner         |                                                                                                     |
 | 20:00 | 23:00 | Schedule | SCH             | Reception - Party          |                                                                                                     |
 | 13:15 | 13:30 | Sequence |                 | Travel to Marina           |                                                                                                     |
@@ -28,14 +28,14 @@ const timelinedata = `
 | 17:20 | 17:30 | Sequence |                 | Moon-rise                  | 17:20 - Moon-rise, 17:30 ~ Moon Visible, 17:35 - Sun-set                                            |
 | 17:30 | 17:35 | Sequence |                 | Sun-set                    | 17:20 - Moon-rise, 17:30 ~ Moon Visible, 17:35 - Sun-set                                            |
 | 17:35 | 17:45 | Sequence |                 | Celebrant stuff            |                                                                                                     |
-| 17:45 | 17:50 | Sequence |                 | Sparkeler Exit             |                                                                                                     |
+| 17:45 | 17:50 | Sequence |                 | Sparklers Exit             |                                                                                                     |
 | 18:05 | 18:30 | Sequence | BPM,P&V         | Doors Open Find Tables     |                                                                                                     |
 | 18:30 | 19:00 | Sequence | BPM,P&V         | Dinner Service Starts      | Speeches between courses (5 speakers × 5 minutes maximum)                                           |
 | 19:00 | 19:45 | Sequence | MC              | Speeches                   | Best Man, Maid of Honour, FoB, PoG, Groom                                                           |
 | 19:45 | 19:55 | Sequence |                 | Cut the Cake               | Cut the Cheese                                                                                      |
 | 20:00 | 20:10 | Sequence |                 | First Dance                |                                                                                                     |
 | 20:10 | 20:50 | Sequence |                 | Guests Dance               |                                                                                                     |
-| 20:50 | 21:00 | Sequence |                 | Bouque Toss                |                                                                                                     |
+| 20:50 | 21:00 | Sequence |                 | Bouquet Toss               |                                                                                                     |
 | 21:00 | 21:05 | Sequence |                 | Photographers leaves       |                                                                                                     |
 | 21:05 | 21:15 | Sequence |                 | Serve Cake                 |                                                                                                     |
 | 21:55 | 22:00 | Sequence |                 | Garter Throw               |                                                                                                     |
